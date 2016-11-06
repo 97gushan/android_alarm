@@ -57,21 +57,9 @@ public class MainActivity extends AppCompatActivity {
         t = new Timer();
 
 
-        am = (AudioManager) this.getSystemService(this.AUDIO_SERVICE);
-
-        int volume = am.getStreamMaxVolume(AudioManager.STREAM_ALARM);
-        am.setStreamVolume(AudioManager.STREAM_ALARM, volume, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
-
-        Uri uri = Uri.parse("");
-        mp = new MediaPlayer();
-        //mp = MediaPlayer.create(this, R.raw.alarm);
-        //mp.setDataSource("res/raw/alarm.wav");
-        mp.setAudioStreamType(AudioManager.STREAM_ALARM);
-
-
+        mp = MediaPlayer.create(this, R.raw.alarm);
 
     }
-
 
     Runnable r = new Runnable(){
 
